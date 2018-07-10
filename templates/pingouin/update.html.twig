@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{# Pas obligatoire ! #}
+{% form_theme formPingouin 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <h1>Modifier un pingouin</h1>
+    <div class="">
+        {{ form_start(formPingouin) }}
+        {{ form_row(formPingouin.nom, {'attr': {'placeholder': "Nom du pingouin"}}) }}
+        {{ form_row(formPingouin.couleur, {'attr': {'placeholder': "Couleur du pingouin en hexa"}}) }}
+        {{ form_row(formPingouin.image, {'attr': {'placeholder': "url de l'image du pingouin"}}) }}
+        <button type="submit" class="btn btn-success">Regénérer le pingouin !</button>
+        {{ form_end(formPingouin) }}
+    </div>
+{% endblock %}
