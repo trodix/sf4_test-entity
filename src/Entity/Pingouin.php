@@ -22,8 +22,8 @@ class Pingouin
      * @Assert\Length(
      *      min=3, 
      *      max=50, 
-     *      minMessage="Le nom du pingouin doit contenir au moins {{limit}} charactères",
-     *      minMessage="Le nom du pingouin doit contenir au plus {{limit}} charactères")
+     *      minMessage="Le nom du pingouin doit contenir au moins 3 caractères",
+     *      minMessage="Le nom du pingouin doit contenir au plus 50 caractères")
      */
     private $nom;
 
@@ -46,8 +46,8 @@ class Pingouin
      * @Assert\Length(
      *      min=1,
      *      max=255,
-     *      minMessage = "L'url de l'image doit comporter au moins {{limit}} charactères",
-     *      maxMessage = "L'url de l'image doit comporter au plus {{limit}} charactères")
+     *      minMessage = "L'url de l'image doit comporter au moins 1 caractères",
+     *      maxMessage = "L'url de l'image doit comporter au plus 255 caractères")
      */
     private $image;
 

@@ -19,7 +19,7 @@ class PingouinType extends AbstractType
             ->add('image')
             ->add('tribu', EntityType::class, [
                 'class' => Tribu::class,
-                'choice_label' => 'nom',
+                'choice_label' => 'nom', // nom: le champs de la bdd à afficher dans la liste déroulante
             ])
         ;
     }
