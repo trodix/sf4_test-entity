@@ -77,11 +77,13 @@ class PingouinController extends Controller
     /**
      * @Route("/pingouin/{id}", name="pingouin_show")
      */
-    public function show($id)
+    public function show(Pingouin $lePingouin)
     {
 
-        $repo = $this->getDoctrine()->getrepository(Pingouin::class);
-        $lePingouin = $repo->find($id);
+        // On utilise le @ParamConverter
+        
+        // $repo = $this->getDoctrine()->getrepository(Pingouin::class);
+        // $lePingouin = $repo->find($id);
 
         return $this->render('pingouin/show.html.twig', [
             'lePingouin' => $lePingouin,

@@ -51,6 +51,12 @@ class Pingouin
      */
     private $image;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Tribu", inversedBy="pingouins")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $tribu;
+
     public function getId()
     {
         return $this->id;
@@ -100,6 +106,18 @@ class Pingouin
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getTribu(): ?Tribu
+    {
+        return $this->tribu;
+    }
+
+    public function setTribu(?Tribu $tribu): self
+    {
+        $this->tribu = $tribu;
 
         return $this;
     }

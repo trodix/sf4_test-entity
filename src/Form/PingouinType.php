@@ -2,9 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Tribu;
 use App\Entity\Pingouin;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class PingouinType extends AbstractType
@@ -15,6 +17,10 @@ class PingouinType extends AbstractType
             ->add('nom')
             ->add('couleur')
             ->add('image')
+            ->add('tribu', EntityType::class, [
+                'class' => Tribu::class,
+                'choice_label' => 'nom',
+            ])
         ;
     }
 
