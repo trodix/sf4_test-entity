@@ -16,12 +16,14 @@
                     </div>
                 </div>
             </div>
+            {% if is_granted('ROLE_USER') %}
             <div class="row">
                 <a href="{{ path('pingouin_edit', {'id': lePingouin.id}) }}" class="btn btn-warning mx-2">Modifier</a>
                 <form action="{{ path('pingouin_delete', {'id': lePingouin.id}) }}" method="post">
                     <input type="submit" value="Supprimer" class="btn btn-danger mx-2">
                 </form>
             </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

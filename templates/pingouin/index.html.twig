@@ -2,9 +2,11 @@
 
 {% block body %}
     <h1>Liste des pingouins</h1>
-    <div class="row mb-5">
-        <a href="{{ path('pingouin_create') }}" class="btn btn-primary">Cloner un Pingouin !</a>
-    </div>
+    {% if is_granted('ROLE_USER') %}
+        <div class="row mb-5">
+            <a href="{{ path('pingouin_create') }}" class="btn btn-primary">Cloner un Pingouin !</a>
+        </div>
+    {% endif %}
     <div class="row">
         {% for unPingouin in lesPingouins %}
             <div class="col col-3">

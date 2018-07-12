@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class PingouinController extends Controller
 {
@@ -27,6 +28,7 @@ class PingouinController extends Controller
 
     /**
      * @Route("/pingouin/new", name="pingouin_create")
+     * @Security("has_role('ROLE_USER')")
      */
     public function create(Request $req)
     {
@@ -92,6 +94,7 @@ class PingouinController extends Controller
 
      /**
      * @Route("/pingouin/{id}/edit", name="pingouin_edit")
+     * @Security("has_role('ROLE_USER')")
      */
     public function Update(Request $req, Pingouin $pingouin)
     {
@@ -127,6 +130,7 @@ class PingouinController extends Controller
     /**
      * @Route("/pingouin/{id}/delete", name="pingouin_delete")
      * @Method("POST")
+     * @Security("has_role('ROLE_USER')")
      */
     public function delete(Pingouin $pingouin)
     {
